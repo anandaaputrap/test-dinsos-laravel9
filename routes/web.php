@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('/admin', function () {
+//     return view('admin/home');
+// });
+
+Route::controller(LoginController::class)->group(function(){
+    Route::get('login', 'index')->name('login');
+    Route::post('login/proses', 'proses');
+    Route::get('logout', 'logout');
 });
 
-Route::get('/admin', function () {
-    return view('admin/home');
+Route::group(['middleware' => ['auth']],function(){
+    Route::group(['middleware' => ['cekUserLogin:1']],function(){
+        Route::resource('home', HomeController::class);
+    });
 });
