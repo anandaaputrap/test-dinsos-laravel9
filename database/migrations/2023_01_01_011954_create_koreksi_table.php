@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('koreksi', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('no_jurnal')->unique();
+            $table->bigInteger('no_jurnal');
             $table->date('tgl_jurnal');
             $table->string('dokumen_sumber');
-            $table->bigInteger('no_dokumen')->unique();
+            $table->bigInteger('no_dokumen');
             $table->date('tgl_dokumen');
             $table->text('uraian');
 

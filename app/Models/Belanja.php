@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class Belanja extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $table = "Pendapatan";
+    protected $table = "Belanja";
     protected $guarded = ['id'];
     protected $fillable = [
         'no_jurnal',

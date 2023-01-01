@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('detail_belanja', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('kode_subkegiatan')->unique();
+            $table->bigInteger('kode_subkegiatan');
             $table->string('nama_subkegiatan');
-            $table->bigInteger('kode_subrinci')->unique();
+            $table->bigInteger('kode_subrinci');
             $table->string('nama_subrinci');
             $table->string('kode', 1);
             $table->float('nominal');

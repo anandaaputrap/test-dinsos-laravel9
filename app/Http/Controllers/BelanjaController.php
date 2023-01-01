@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Belanja;
 use Illuminate\Http\Request;
 
 class BelanjaController extends Controller
@@ -13,7 +14,9 @@ class BelanjaController extends Controller
      */
     public function index()
     {
-        //
+        return view('belanja.home')->with([
+            'belanja' => Belanja::all(),
+        ]);
     }
 
     /**

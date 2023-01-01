@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BelanjaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PendapatanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,5 +34,8 @@ Route::controller(LoginController::class)->group(function(){
 Route::group(['middleware' => ['auth']],function(){
     Route::group(['middleware' => ['cekUserLogin:1']],function(){
         Route::resource('home', HomeController::class);
+        Route::resource('pendapatan', PendapatanController::class);
+        Route::get('pendapatan/list', [PendapatanController::class, 'getPendapatan'])->name('pendapatan.list');
+        Route::resource('belanja', BelanjaController::class);
     });
 });
