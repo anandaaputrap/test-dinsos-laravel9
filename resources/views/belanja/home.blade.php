@@ -44,11 +44,11 @@
                         <td>{{ $hasil->no_dokumen }}</td>
                         <td>{{ $hasil->uraian }}</td>
                         <td>
+                          <a href="{{ route('belanja.edit', $hasil->id) }}" class="btn btn-success btn-sm">Edit</a>
                             <form action="{{ route('belanja.destroy', $hasil->id) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <a href="{{ route('belanja.edit', $hasil->id) }}" class="btn btn-success btn-sm">Edit</a>
-                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                             </form>
                         </td>
                     </tr>
