@@ -44,14 +44,15 @@
                         <td>{{ $hasil->dokumen_sumber }}</td>
                         <td>{{ $hasil->no_dokumen }}</td>
                         <td>{{ $hasil->uraian }}</td>
-                        {{-- <td>
+                        <td>
+                          <a href="{{ route('pendapatan.edit', $hasil->id) }}" class="btn btn-success btn-sm">Edit</a>
                             <form action="{{ route('pendapatan.destroy', $hasil->id) }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <a href="{{ route('pendapatan.edit', $hasil->id) }}" class="btn btn-success btn-sm">Edit</a>
+                                
                                 <button class="btn btn-danger btn-sm">Hapus</button>
                             </form>
-                        </td> --}}
+                        </td>
                     </tr>
                 @endforeach
                     @else
