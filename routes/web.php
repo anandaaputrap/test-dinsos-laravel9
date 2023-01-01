@@ -24,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::controller(LoginController::class)->group(function(){
-    Route::get('login', 'index')->name('login');
+    Route::get('/', 'index')->name('login');
     Route::post('login/proses', 'proses');
-    Route::get('logout', 'logout');
+    Route::get('logout', 'logout')->name('logout');
 });
 
 Route::group(['middleware' => ['auth']],function(){
