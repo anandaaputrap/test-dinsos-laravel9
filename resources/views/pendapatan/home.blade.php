@@ -85,7 +85,7 @@
               </div>
               <div class="form-group">
                 <label for="">No Dokumen</label>
-                <input type="text" class="form-control" id="tambahtanggal2" name="no_dokumen" value="{{ $pendapatan->no_dokumen }}">
+                <input type="text" class="form-control" id="no_dokumen" name="no_dokumen" value="{{ $pendapatan->no_dokumen }}">
               </div>
               <div class="form-group">
                 <label for="">Tanggal Dokumen</label>
